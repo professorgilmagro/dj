@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+<form method="post" action="" class="edit">
+{% csrf_token %}
+{{ form.as_ul }}
+<button class="btn" type="submit" >Salvar</button>
+<br>
+<a href="/agenda/lista">Volta para listagem</a>
+</form>
+
+{% endblock %}

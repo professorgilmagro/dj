@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+<form action="" name="search" >
+<label for="search">Buscar: </label>
+<input style="width:40%" type="text" value="{{query}}" name="q" id="q">
+<br>
+<br>
+</form>
+<p><a href="/agenda/adiciona/">Adicionar novo item</a></p>
+
+<div class="main">
+<table class="list-items" width="50%">
+<thead>
+	<th>Assunto</th>
+	<th>Data</th>
+	<th>Horário</th>
+	<th>&nbsp;</th>
+</thead>
+<tbody>
+{% for item in items %}
+	<tr>
+		<td><a href="/agenda/item/{{item.schedule_item_id}}">{{ item.subject}}</a></td>
+		<td><a href="/agenda/item/{{item.schedule_item_id}}">{{item.date|date:'d/m/Y'}}</a></td>
+		<td><a href="/agenda/item/{{item.schedule_item_id}}">{{item.time}}</a></td>
+		<td>
+			<a onclick="javascript:return confirm('Tem certeza que deseja remover este item');" title="Remover" href="/agenda/remove/{{item.schedule_item_id}}">
+			<img alt="remover item" src="/media/images/lixeira.png" /></a></td>
+	</tr>
+{% empty %}
+	Sem itens na lista
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+</div>

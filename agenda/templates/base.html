@@ -1,0 +1,41 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+{% block head %}
+	<title>Agenda</title>
+	<link rel="stylesheet" type="text/css" href="/media/css/reset-fonts-grids.css" />
+	<link rel="stylesheet" type="text/css" href="/media/css/front.css" />
+{% endblock %}
+</head>
+<body>
+<div id="main">
+	{% block cabecalho %}
+	<div id="hd">
+	  <h1><a href="">Python e Django - Desenvolvimento ágil de aplicações web</a></h1>
+	  <nav id="global-nav">
+	    <a title="Home page" href="/">Home</a>  |
+	    <a title="Agenda de compromissos" href="/agenda/lista">Agenda</a>  |
+	    <a title="Adicionar evento" href="/agenda/adiciona">Adicionar eventos</a>  |
+	    <a title="Administração de conteúdo" href="/admin">Área administrativa</a>  |
+	    <a title="sair" href="/logout/">{{user}} - logout</a>
+	 </nav>
+	</div>
+	{% endblock %}
+<div id="content">
+      <div id="yui-main">
+        <div class="yui-b">
+          <div class="yui-g" id="index">
+              <div class="section">
+				{% block corpo %}
+
+
+
+				{% endblock %}
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+</body>
+</html>
